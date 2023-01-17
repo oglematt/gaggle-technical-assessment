@@ -1,0 +1,10 @@
+<input
+    id="checkboxItem"
+    class="styled-checkbox"
+    type="checkbox"
+    [disabled]="disabled"
+    [ngModel]="checked"
+    (ngModelChange)="onModelChange($event)"
+  />
+
+<label for="checkboxItem">{{label}}</label>

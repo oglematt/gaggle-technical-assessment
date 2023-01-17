@@ -1,0 +1,42 @@
+<!-- Modal for Registration Form -->
+<gaggle-overlay *ngIf="showModal" [(showOverlay)]="showModal">
+  <app-registration-form [(showForm)]="showModal"></app-registration-form>
+</gaggle-overlay>
+
+<!-- Login Layout (always visible)-->
+<div class="full-width-image">
+  <a href="https://www.gaggle.net" class="logo" target="_blank" tabindex="-1">
+    <img alt="Gaggle Logo" src="../../../../assets/logo--Gaggle.svg" />
+  </a>
+  <div class="login-form-back">
+    <div class="login-form-overlay">
+      <div style="flex: 1;"></div>
+      <div class="login-form">
+        <form [formGroup]="loginForm">
+
+            <gaggle-input label="Username" inputId="username" [suppressErrors]="true"
+                              #username formControlName="username" [control]="loginForm.get('username') | formControl ">
+            </gaggle-input>
+            <gaggle-input label="Password" inputId="password" [suppressErrors]="true"
+                              inputType="password" #password formControlName="password"
+                              [control]="loginForm.get('password') | formControl ">
+            </gaggle-input>
+            <gaggle-checkbox label="Remember" formControlName="rememberUser"></gaggle-checkbox>
+
+            <div class="button-wrapper">
+              <button (click)="loginUser()" [disabled]="loginForm.invalid || showModal">
+                <span>Sign On</span>
+              </button>
+            </div>
+
+        </form>
+      </div>
+      <div style="flex: 1;"></div>
+      <div class="form-links">
+        <span (click)="showRegistrationForm()">Register</span>
+        <span class="spacer">|</span>
+        <span (click)="forgotPassword()">Forgot Password?</span>
+      </div>
+    </div>
+  </div>
+</div>

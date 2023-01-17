@@ -1,0 +1,34 @@
+<div class="form-wrapper">
+  <div class="form-left">
+    <img alt="busted image" src="https://static.thenounproject.com/png/1700297-200.png" height="50px">
+  </div>
+  <div class="form-right">
+    <div class="form-title">
+      New Account
+      <span style="flex: 1;"></span>
+    </div>
+    <form [formGroup]="registrationForm" style="width: 100%">
+
+      <gaggle-input label="Username" inputId="regUsername" #regUsername
+                    formControlName="username" [control]="registrationForm.get('username') | formControl "></gaggle-input>
+      <gaggle-input label="Password" inputId="regPassword" inputType="password"
+                    formControlName="password" [control]="registrationForm.get('password') | formControl "></gaggle-input>
+      <gaggle-input label="Email" inputId="regEmail"
+                    formControlName="email" [control]="registrationForm.get('email') | formControl"></gaggle-input>
+
+    </form>
+  </div>
+</div>
+
+<div class="form-actions">
+  <button (click)="hideForm()">
+    Cancel
+  </button>
+
+  <!-- This div is here just to provide flexible space -->
+  <div style="flex: 1"></div>
+
+  <button (click)="registerUser()" class="action-button">
+    Register Account
+  </button>
+</div>

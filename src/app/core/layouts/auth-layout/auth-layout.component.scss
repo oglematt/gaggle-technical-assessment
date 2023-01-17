@@ -1,0 +1,81 @@
+.full-width-image {
+  min-height: 100vh;
+  width: 100vw;
+  background:
+    url("../../../../assets/hero-image.png") no-repeat center center fixed,
+    linear-gradient(0deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.57) 100%);
+  background-size: cover;
+}
+
+.login-form-back {
+  background: #FFFFFF;
+  min-height: 100vh;
+  max-width: 50vw;
+  display: flex;
+}
+
+.login-form-overlay {
+  background: rgba(0,0,0,0.04);
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form {
+  max-width: 272px;
+  min-width: 192px;
+  width: 30%;
+}
+
+.logo {
+  z-index: 100;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  height: 32px;
+  width: 100px;
+}
+
+.button-wrapper {
+
+  display: flex;
+  justify-content: center;
+
+  & > button {
+
+    background: #263A91;
+    border-radius: 3px;
+    height: 32px;
+    padding: 6px 26px;
+    cursor: pointer;
+    user-select: none;
+
+    &:disabled {
+      background: lightgray;
+
+      & > span {
+        color: darkgray;
+      }
+    }
+
+    & > span {
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+
+.form-links {
+  margin-bottom: 35px;
+  font-size: 14px;
+  color: #263A91;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+
+  & > span.spacer {
+    margin: 0 16px;
+  }
+}

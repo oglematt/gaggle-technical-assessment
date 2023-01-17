@@ -1,0 +1,87 @@
+:host {
+  display: block;
+  height: 20px;
+  margin-bottom: 6px;
+}
+
+.styled-checkbox {
+
+  // This hides the default element
+  position: absolute;
+  opacity: 0;
+
+  & + label {
+    font-size: 12px;
+    color: rgba(0,0,0,0.70);
+    letter-spacing: 0.15px;
+    text-align: right;
+    line-height: 16px;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    user-select: none;
+  }
+
+  // Box.
+  & + label:before {
+    content: '';
+    margin-right: 6px;
+    margin-top: -2px;
+    display: inline-block;
+    border: 2px solid rgba(0,0,0,0.70);
+    border-radius: 3px;
+    vertical-align: text-top;
+    width: 12px;
+    height: 12px;
+    background: white;
+  }
+
+  // Box hover
+  &:hover + label:before {
+    background: rgba(23, 112, 230, 0.16);
+    border-radius: 3px;
+  }
+
+  // Box focus
+  &:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+  }
+
+  // Box checked
+  &:checked + label:before {
+    background: #1770E6;
+    border: 2px solid #1770E6;
+    border-radius: 3px;
+  }
+
+  // Disabled state label.
+  &:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+
+  // Disabled box.
+  &:disabled + label:before {
+    box-shadow: none;
+    background: #ddd;
+  }
+
+  // Checkmark. Could be replaced with an image
+  &:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 5px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow:
+      2px 0 0 white,
+      4px 0 0 white,
+      4px -2px 0 white,
+      4px -3px 0 white,
+      4px -5px 0 white,
+      4px -7px 0 white;
+    transform: rotate(45deg);
+  }
+}

@@ -1,0 +1,74 @@
+$normal: 400;
+$bold: 500;
+
+label {
+  font-size: 12px;
+  font-weight: $bold;
+}
+
+div.form-field {
+
+  background: rgba(255,255,255,0.90);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.30);
+  border-radius: 3px;
+  margin-bottom: 8px;
+  padding-bottom: 1px;
+
+  & > label {
+    margin: 2px 8px;
+    font-size: 12px;
+  }
+
+  & > .password-visibility {
+
+    float: right;
+    margin: 2px 8px;
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+
+    & > img {
+      margin-right: 2px;
+    }
+
+    & > span {
+      font-size: 12px;
+    }
+
+  }
+
+  & > .input-wrapper {
+
+    box-sizing: border-box;
+    border-bottom: 2px solid white;
+    margin: 2px 8px;
+
+    & > span.clear-btn {
+      visibility: visible;
+      cursor: pointer;
+    }
+
+    &:focus-within {
+      border-bottom: 2px solid #263A91;
+    }
+
+    & > input {
+      font-weight: $normal;
+      width: calc(100% - 16px);
+      border: 0;
+      font-size: 14px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  div.error-message {
+    color: red;
+    font-style: italic;
+    font-size: 12px;
+    margin: 6px 8px;
+  }
+
+}
