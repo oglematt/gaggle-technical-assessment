@@ -30,8 +30,8 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   registerUser(): void {
-    console.info(this.registrationForm);
     alert('Do that registration thing!');
+    this.hideForm();
   }
 
 

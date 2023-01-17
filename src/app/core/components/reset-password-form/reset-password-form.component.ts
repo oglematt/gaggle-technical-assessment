@@ -27,7 +27,8 @@ export class ResetPasswordFormComponent implements OnInit {
   }
 
   resetPassword(): void {
-    alert('You should receive an email with instructions at ' + this.resetPasswordForm.get('email')?.value + ' shortly.')
+    alert('You should receive an email with instructions at ' + this.resetPasswordForm.get('email')?.value + ' shortly.');
+    this.hideForm();
   }
 
 }
