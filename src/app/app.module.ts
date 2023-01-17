@@ -11,6 +11,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { GaggleInputComponent } from './shared/form-controls/gaggle-input/gaggle-input.component';
 import {SharedModule} from "./shared/shared.module";
 import { RegistrationFormComponent } from './core/components/registration-form/registration-form.component';
+import { ResetPasswordFormComponent } from './core/components/reset-password-form/reset-password-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RegistrationFormComponent } from './core/components/registration-form/r
     AuthLayoutComponent,
     MainLayoutComponent,
     TopBarComponent,
-    RegistrationFormComponent
+    RegistrationFormComponent,
+    ResetPasswordFormComponent
   ],
   imports: [
     AppRoutingModule,

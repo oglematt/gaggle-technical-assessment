@@ -1,6 +1,10 @@
 <!-- Modal for Registration Form -->
-<gaggle-overlay *ngIf="showModal" [(showOverlay)]="showModal">
-  <app-registration-form [(showForm)]="showModal"></app-registration-form>
+<gaggle-overlay *ngIf="showModalRegistration" [(showOverlay)]="showModalRegistration">
+  <app-registration-form [(showForm)]="showModalRegistration"></app-registration-form>
+</gaggle-overlay>
+
+<gaggle-overlay *ngIf="showModalResetPw" [(showOverlay)]="showModalResetPw">
+  <app-reset-password-form [(showForm)]="showModalResetPw"></app-reset-password-form>
 </gaggle-overlay>
 
 <!-- Login Layout (always visible)-->
@@ -24,7 +28,7 @@
             <gaggle-checkbox label="Remember" formControlName="rememberUser"></gaggle-checkbox>
 
             <div class="button-wrapper">
-              <button (click)="loginUser()" [disabled]="loginForm.invalid || showModal">
+              <button (click)="loginUser()" [disabled]="loginForm.invalid || showModalResetPw || showModalRegistration">
                 <span>Sign On</span>
               </button>
             </div>
@@ -35,7 +39,7 @@
       <div class="form-links">
         <span (click)="showRegistrationForm()">Register</span>
         <span class="spacer">|</span>
-        <span (click)="forgotPassword()">Forgot Password?</span>
+        <span (click)="showResetPasswordForm()">Forgot Password?</span>
       </div>
     </div>
   </div>

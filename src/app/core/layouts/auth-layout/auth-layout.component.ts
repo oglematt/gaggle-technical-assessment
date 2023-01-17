@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, HostListener, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { LoginService } from "../../services/login.service";
 import { FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { User } from "../../interfaces/user";
@@ -13,7 +13,8 @@ import {GaggleInputComponent} from "../../../shared/form-controls/gaggle-input/g
 export class AuthLayoutComponent implements OnInit, AfterViewInit {
 
   public loginForm!: FormGroup;
-  public showModal: boolean = false;
+  public showModalRegistration: boolean = false;
+  public showModalResetPw: boolean = false;
   private regUsernameField!: GaggleInputComponent;
 
   @ViewChild('username') usernameField!: GaggleInputComponent;
@@ -74,11 +75,11 @@ export class AuthLayoutComponent implements OnInit, AfterViewInit {
   }
 
   showRegistrationForm(): void {
-    this.showModal = true;
+    this.showModalRegistration = true;
   }
 
-  forgotPassword(): void {
-    alert('Sorry about that, but you cannot reset your password :(');
+  showResetPasswordForm(): void {
+    this.showModalResetPw = true;
   }
 
 }
