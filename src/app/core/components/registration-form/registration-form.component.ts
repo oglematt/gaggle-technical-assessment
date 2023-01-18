@@ -1,12 +1,15 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {GaggleInputComponent} from "../../../shared/form-controls/gaggle-input/gaggle-input.component";
 
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
   styleUrls: ['./registration-form.component.scss']
 })
-export class RegistrationFormComponent implements OnInit {
+export class RegistrationFormComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('regUsername') usernameField!: GaggleInputComponent;
 
   @Input() showForm: boolean = false;
   @Output() showFormChange: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -23,6 +26,10 @@ export class RegistrationFormComponent implements OnInit {
       password: ['', [ Validators.required, Validators.minLength(8) ] ],
       email: ['', [ Validators.email ] ]
     });
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => this.usernameField.inputElement.nativeElement.focus(), 100);
   }
 
   hideForm(): void {

@@ -3,6 +3,7 @@ import { LoginService } from "../../services/login.service";
 import { FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { User } from "../../interfaces/user";
 import {GaggleInputComponent} from "../../../shared/form-controls/gaggle-input/gaggle-input.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-auth-layout',
@@ -30,10 +31,16 @@ export class AuthLayoutComponent implements OnInit, AfterViewInit {
 
   constructor(
     private loginService: LoginService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+
+    if (this.loginService.userValue) {
+      this.router.navigate(['/']);
+    }
+
     const rememberUserStore = localStorage.getItem('rememberUser');
 
     this.loginForm = this.formBuilder.group({
@@ -69,8 +76,9 @@ export class AuthLayoutComponent implements OnInit, AfterViewInit {
       localStorage.removeItem('rememberUser');
     }
 
-    console.log(formValues)
-    this.loginService.loginUser(formValues);
+    if (this.loginService.login(formValues)) {
+      this.router.navigate(['/']);
+    }
 
   }
 

@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthLayoutComponent } from './auth-layout.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import {FormControlPipe} from "../../../shared/pipes/form-control.pipe";
+import {GaggleInputComponent} from "../../../shared/form-controls/gaggle-input/gaggle-input.component";
+import {GaggleCheckboxComponent} from "../../../shared/form-controls/gaggle-checkbox/gaggle-checkbox.component";
 
 describe('AuthLayoutComponent', () => {
   let component: AuthLayoutComponent;
@@ -8,7 +12,8 @@ describe('AuthLayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AuthLayoutComponent ]
+      imports: [ FormsModule, ReactiveFormsModule ],
+      declarations: [ AuthLayoutComponent, GaggleInputComponent, GaggleCheckboxComponent, FormControlPipe ]
     })
     .compileComponents();
 

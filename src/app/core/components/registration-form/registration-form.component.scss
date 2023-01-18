@@ -45,7 +45,7 @@ div.form-actions {
   height: 48px;
   min-height: 48px;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 
   & > button {

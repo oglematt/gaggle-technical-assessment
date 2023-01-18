@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RegistrationFormComponent } from './registration-form.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormControlPipe} from "../../../shared/pipes/form-control.pipe";
+import {GaggleInputComponent} from "../../../shared/form-controls/gaggle-input/gaggle-input.component";
+import {GaggleCheckboxComponent} from "../../../shared/form-controls/gaggle-checkbox/gaggle-checkbox.component";
 
 describe('RegistrationFormComponent', () => {
   let component: RegistrationFormComponent;
@@ -8,7 +12,8 @@ describe('RegistrationFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegistrationFormComponent ]
+      imports: [ FormsModule, ReactiveFormsModule ],
+      declarations: [ RegistrationFormComponent, GaggleInputComponent, GaggleCheckboxComponent, FormControlPipe ]
     })
     .compileComponents();
 

@@ -16,7 +16,7 @@ import { GaggleOverlayComponent } from './components/gaggle-overlay/gaggle-overl
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     GaggleCheckboxComponent,

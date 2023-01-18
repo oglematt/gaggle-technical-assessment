@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, UrlTree} from '@angular/router';
 import { LoginService } from "../services/login.service";
+import {User} from "../interfaces/user";
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,13 @@ export class AuthGuard implements CanActivate {
   ) {
   }
 
-  canActivate(): boolean | UrlTree {
-    return this.loginService.userLoggedIn() ||
-      this.router.parseUrl('login');
+  canActivate(): boolean {
+    if (this.loginService.userValue) {
+      return true;
+    }
+
+    this.router.navigate(['/login']);
+    return false;
   }
 
 }
