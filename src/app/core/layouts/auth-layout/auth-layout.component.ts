@@ -38,6 +38,7 @@ export class AuthLayoutComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
 
     if (this.loginService.userValue) {
+      // noinspection JSIgnoredPromiseFromCall
       this.router.navigate(['/']);
     }
 
