@@ -14,6 +14,7 @@ import {Router} from "@angular/router";
 export class AuthLayoutComponent implements OnInit, AfterViewInit {
 
   public loginForm!: FormGroup;
+  public loginError: string = '';
   public showModalRegistration: boolean = false;
   public showModalResetPw: boolean = false;
   private regUsernameField!: GaggleInputComponent;
@@ -80,6 +81,10 @@ export class AuthLayoutComponent implements OnInit, AfterViewInit {
     if (this.loginService.login(formValues)) {
       // noinspection JSIgnoredPromiseFromCall
       this.router.navigate(['/']);
+    } else {
+      this.loginError = 'Username or password incorrect';
+      this.loginForm.get('password')?.reset();
+      this.setFocus();
     }
 
   }
