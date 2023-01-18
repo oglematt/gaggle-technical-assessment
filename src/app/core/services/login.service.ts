@@ -13,8 +13,8 @@ export class LoginService {
   public user!: Observable<User | null>;
 
   private validUser: User = {
-    username: 'mogle',
-    password: 'hopeThisWorks!'
+    username: 'gaggle',
+    password: 'HowNeatIsThat?'
   };
 
   constructor(
