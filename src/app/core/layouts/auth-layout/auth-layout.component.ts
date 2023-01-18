@@ -77,6 +77,7 @@ export class AuthLayoutComponent implements OnInit, AfterViewInit {
     }
 
     if (this.loginService.login(formValues)) {
+      // noinspection JSIgnoredPromiseFromCall
       this.router.navigate(['/']);
     }
 

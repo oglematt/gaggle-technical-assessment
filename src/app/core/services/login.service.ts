@@ -51,6 +51,7 @@ export class LoginService {
   logout(): void {
     localStorage.removeItem('currentUser');
     this.userSubject.next(null);
+    // noinspection JSIgnoredPromiseFromCall
     this.router.navigate(['/login']);
   }
 }
