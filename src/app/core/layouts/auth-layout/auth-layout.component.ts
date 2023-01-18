@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { User } from "../../interfaces/user";
 import {GaggleInputComponent} from "../../../shared/form-controls/gaggle-input/gaggle-input.component";
 import {Router} from "@angular/router";
+import {RegistrationFormComponent} from "../../components/registration-form/registration-form.component";
+import {ResetPasswordFormComponent} from "../../components/reset-password-form/reset-password-form.component";
 
 @Component({
   selector: 'app-auth-layout',
@@ -15,20 +17,12 @@ export class AuthLayoutComponent implements OnInit, AfterViewInit {
 
   public loginForm!: FormGroup;
   public loginError: string = '';
-  public showModalRegistration: boolean = false;
-  public showModalResetPw: boolean = false;
-  private regUsernameField!: GaggleInputComponent;
+
+  @ViewChild(RegistrationFormComponent) registrationForm!: RegistrationFormComponent;
+  @ViewChild(ResetPasswordFormComponent) resetPasswordForm!: ResetPasswordFormComponent;
 
   @ViewChild('username') usernameField!: GaggleInputComponent;
   @ViewChild('password') passwordField!: GaggleInputComponent;
-
-  // I had to use a setter here because this item isn't there initially
-  // due to ngIf directive
-  @ViewChild('regUsername') set content(content: GaggleInputComponent) {
-    if(content) {
-      this.regUsernameField = content;
-    }
-  }
 
   constructor(
     private loginService: LoginService,
@@ -90,11 +84,11 @@ export class AuthLayoutComponent implements OnInit, AfterViewInit {
   }
 
   showRegistrationForm(): void {
-    this.showModalRegistration = true;
+    this.registrationForm.open();
   }
 
   showResetPasswordForm(): void {
-    this.showModalResetPw = true;
+    this.resetPasswordForm.open();
   }
 
 }

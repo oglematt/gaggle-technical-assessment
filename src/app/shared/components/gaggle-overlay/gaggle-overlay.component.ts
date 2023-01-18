@@ -7,13 +7,12 @@ import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@ang
 })
 export class GaggleOverlayComponent implements OnInit {
 
-  @Input() showOverlay: boolean = false;
-  @Output() showOverlayChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() closeOverlay: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   // Because any sane person knows the escape key should close a modal :)
   @HostListener('document:keydown', ['$event']) onKeydownHandler(event: KeyboardEvent) {
     if (event.key === "Escape")  {
-      this.showOverlayChange.emit(false)
+      this.closeOverlay.emit(true)
     }
   }
 

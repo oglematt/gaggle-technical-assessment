@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, HostBinding, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {GaggleInputComponent} from "../../../shared/form-controls/gaggle-input/gaggle-input.component";
 
@@ -9,11 +9,8 @@ import {GaggleInputComponent} from "../../../shared/form-controls/gaggle-input/g
 })
 export class RegistrationFormComponent implements OnInit, AfterViewInit {
 
+  @HostBinding("style.visibility") visibility = "hidden";
   @ViewChild('regUsername') usernameField!: GaggleInputComponent;
-
-  @Input() showForm: boolean = false;
-  @Output() showFormChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-
   public registrationForm!: FormGroup;
 
   constructor(
@@ -32,13 +29,20 @@ export class RegistrationFormComponent implements OnInit, AfterViewInit {
     setTimeout(() => this.usernameField.inputElement.nativeElement.focus(), 100);
   }
 
-  hideForm(): void {
-    this.showFormChange.emit(false);
+  open(): void {
+    this.visibility = 'visible';
+  }
+
+  close(): void {
+    if (this.visibility === 'visible') {
+      this.visibility = 'hidden';
+    }
   }
 
   registerUser(): void {
     alert('Do that registration thing!');
-    this.hideForm();
+    this.registrationForm.reset();
+    this.close();
   }
 
 
