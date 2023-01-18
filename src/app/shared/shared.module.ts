@@ -5,6 +5,7 @@ import { FormControlPipe } from './pipes/form-control.pipe';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserModule} from "@angular/platform-browser";
 import { GaggleOverlayComponent } from './components/gaggle-overlay/gaggle-overlay.component';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { GaggleOverlayComponent } from './components/gaggle-overlay/gaggle-overl
     GaggleOverlayComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule
   ],
