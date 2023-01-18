@@ -8,3 +8,68 @@ html, body {
   font-family: "Product Sans" ,Roboto, "Helvetica Neue", sans-serif;
   font-weight: normal;
 }
+
+div.modal-form-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  overflow: scroll;
+
+  & > div.form-left {
+    width: 100px;
+    padding-top: 20px;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 3px 0 0 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  & > div.form-right {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+    overflow: scroll;
+
+    & > .form-title {
+      font-size: 16px;
+      font-weight: 500;
+      width: 100%;
+      margin-bottom: 14px;
+    }
+  }
+}
+
+div.form-actions {
+  display: flex;
+  flex-direction: row;
+  height: 48px;
+  min-height: 48px;
+  align-items: center;
+  justify-content: flex-start;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+  & > button {
+    border: none;
+    min-width: 100px;
+    height: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 24px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+
+    &.action-button {
+      color: #263A91;
+      &:disabled {
+        color: lightgray;
+      }
+    }
+
+  }
+}
