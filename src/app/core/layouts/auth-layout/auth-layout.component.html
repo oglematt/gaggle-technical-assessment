@@ -16,7 +16,7 @@
     <div class="login-form-overlay">
       <div style="flex: 1;"></div>
       <div class="login-form">
-        <form [formGroup]="loginForm">
+        <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
 
             <gaggle-input label="Username" inputId="username" [suppressErrors]="true"
                               #username formControlName="username" [control]="loginForm.get('username') | formControl ">
@@ -28,7 +28,7 @@
             <gaggle-checkbox label="Remember" formControlName="rememberUser"></gaggle-checkbox>
 
             <div class="button-wrapper">
-              <button (click)="loginUser()" [disabled]="loginForm.invalid || showModalResetPw || showModalRegistration">
+              <button [disabled]="loginForm.invalid || showModalResetPw || showModalRegistration">
                 <span>Sign On</span>
               </button>
             </div>
