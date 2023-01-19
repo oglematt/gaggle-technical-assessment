@@ -6,13 +6,15 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserModule} from "@angular/platform-browser";
 import { GaggleOverlayComponent } from './components/gaggle-overlay/gaggle-overlay.component';
 import {CommonModule} from "@angular/common";
+import { GaggleIconMenuButton } from './components/gaggle-icon-menu-button/gaggle-icon-menu-button.component';
 
 @NgModule({
   declarations: [
     GaggleCheckboxComponent,
     GaggleInputComponent,
     FormControlPipe,
-    GaggleOverlayComponent
+    GaggleOverlayComponent,
+    GaggleIconMenuButton
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import {CommonModule} from "@angular/common";
     GaggleCheckboxComponent,
     GaggleInputComponent,
     FormControlPipe,
-    GaggleOverlayComponent
+    GaggleOverlayComponent,
+    GaggleIconMenuButton
   ],
   providers: [
     FormControlPipe
