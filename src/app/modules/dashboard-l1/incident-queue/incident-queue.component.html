@@ -1,1 +1,45 @@
-<p>incident queue screen goes here</p>
+<div class="flex-fill">
+
+  <div class="grid-toolbar">
+    <gaggle-icon-menu-button icon="search">Button 1</gaggle-icon-menu-button>
+    <gaggle-icon-menu-button icon="cool_to_dry">Button 2</gaggle-icon-menu-button>
+    <gaggle-icon-menu-button icon="receipt_long">Button 3</gaggle-icon-menu-button>
+    <div style="flex: 1"></div>
+    <gaggle-icon-menu-button icon="download">Export</gaggle-icon-menu-button>
+  </div>
+
+  <div class="grid">
+    <div class="grid-header">
+      <div class="grid-column column-header">
+        <gaggle-checkbox (change)="selectAll()"></gaggle-checkbox>
+      </div>
+      <div class="grid-column column-header">
+        <span>Date</span>
+      </div>
+      <div class="grid-column column-header">
+        <span>Incident Type</span>
+      </div>
+      <div class="grid-column column-header">
+        <span>Status</span>
+      </div>
+    </div>
+    <div class="grid-content">
+      <div class="grid-row-wrapper" *ngFor="let _ of [].constructor(30); let i = index;">
+        <div class="grid-row-content">
+          <div class="grid-column">
+            <gaggle-checkbox></gaggle-checkbox>
+          </div>
+          <div class="grid-column">
+            <span>1/{{ i + 1 }}/2023</span>
+          </div>
+          <div class="grid-column">
+            <span>Type</span>
+          </div>
+          <div class="grid-column">
+            <span>Status</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

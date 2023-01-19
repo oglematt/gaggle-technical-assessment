@@ -9,7 +9,9 @@ export class IncidentQueueComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
+  selectAll(): void {
+    alert('If fully implemented, this would toggle all rows based on some sort of selection model');
+  }
 }

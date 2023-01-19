@@ -1,0 +1,74 @@
+$header-height: 40px;
+
+div.grid-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 48px;
+  background: #EBEBEB;
+  padding-left: 24px;
+}
+
+div.grid {
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-size: 14px;
+  font-weight: 400;
+
+  .table-layout {
+    display: grid;
+    grid-template-columns: 40px .5fr 120px 1fr;
+  }
+
+  .grid-column {
+    margin: 0 5px;
+    border-right: 1px solid white;
+  }
+
+  & > div.grid-header {
+    @extend .grid-toolbar;
+    @extend .table-layout;
+    min-height: $header-height;
+    padding-left: 24px;
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba(0,0,0,0.70);
+    letter-spacing: 0.15px;
+    line-height: 20px;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.08), 0 4px 4px 0 rgba(0,0,0,0.08);
+
+    div.column-header {
+      border-color: gray;
+    }
+
+    & > div:last-of-type {
+      border-color: transparent;
+    }
+
+  }
+
+  & > div.grid-content {
+
+    min-height: calc(100% - $header-height);
+    overflow: auto;
+    flex-grow: 1;
+    flex-basis: 0;
+
+    div.grid-row-wrapper {
+      min-height: 36px;
+      border-bottom: 1px solid #EBEBEB;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      div.grid-row-content {
+        @extend .table-layout;
+        flex: 1;
+        padding-left: 24px;
+      }
+    }
+  }
+}
