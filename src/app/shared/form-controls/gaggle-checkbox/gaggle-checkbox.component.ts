@@ -17,6 +17,7 @@ export class GaggleCheckboxComponent implements ControlValueAccessor {
   public disabled: boolean = false;
 
   @Input() label: string = '';
+  @Input() inputId: string = Math.random().toString(36).substring(5);
 
   constructor() { }
 

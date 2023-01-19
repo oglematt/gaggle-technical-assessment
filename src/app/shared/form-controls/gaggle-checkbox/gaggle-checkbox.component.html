@@ -1,5 +1,5 @@
 <input
-    id="checkboxItem"
+    [id]="inputId"
     class="styled-checkbox"
     type="checkbox"
     [disabled]="disabled"
@@ -7,4 +7,4 @@
     (ngModelChange)="onModelChange($event)"
   />
 
-<label for="checkboxItem">{{label}}</label>
+<label [for]="inputId">{{label}}</label>
