@@ -20,7 +20,9 @@
                               inputType="password" #password formControlName="password"
                               [control]="loginForm.get('password') | formControl ">
             </gaggle-input>
-            <gaggle-checkbox label="Remember" formControlName="rememberUser"></gaggle-checkbox>
+            <div class="checkbox-wrapper">
+              <gaggle-checkbox label="Remember" formControlName="rememberUser"></gaggle-checkbox>
+            </div>
 
             <div class="button-wrapper">
               <button [disabled]="loginForm.invalid">

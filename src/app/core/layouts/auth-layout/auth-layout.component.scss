@@ -76,6 +76,10 @@
   }
 }
 
+.checkbox-wrapper {
+  margin-bottom: 10px;
+}
+
 .form-links {
   margin-bottom: 35px;
   font-size: 14px;
@@ -83,6 +87,7 @@
   font-weight: 500;
   cursor: pointer;
   user-select: none;
+
 
   & > span.spacer {
     margin: 0 16px;
