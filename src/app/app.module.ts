@@ -11,6 +11,7 @@ import { SharedModule } from "./shared/shared.module";
 import { RegistrationFormComponent } from './core/components/registration-form/registration-form.component';
 import { ResetPasswordFormComponent } from './core/components/reset-password-form/reset-password-form.component';
 import {FormControlPipe} from "./shared/pipes/form-control.pipe";
+import { ApplicationMenuComponent } from './core/components/application-menu/application-menu.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {FormControlPipe} from "./shared/pipes/form-control.pipe";
     MainLayoutComponent,
     TopBarComponent,
     RegistrationFormComponent,
-    ResetPasswordFormComponent
+    ResetPasswordFormComponent,
+    ApplicationMenuComponent
   ],
   imports: [
     AppRoutingModule,
