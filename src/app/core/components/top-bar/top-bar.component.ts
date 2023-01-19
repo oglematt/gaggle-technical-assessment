@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {LoginService} from "../../services/login.service";
+import {ApplicationMenuComponent} from "../application-menu/application-menu.component";
 
 @Component({
   selector: 'app-top-bar',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() { }
+  public menuVisible: boolean = false;
+  public menuTrigger!: MouseEvent;
 
-  ngOnInit(): void {
+  @ViewChild(ApplicationMenuComponent) appMenu!: ApplicationMenuComponent;
+
+  constructor(
+    private loginService: LoginService
+  ) { }
+
+  ngOnInit(): void { }
+
+  showMenu(e: MouseEvent): void {
+    this.appMenu.open(e);
+  }
+
+  logout() {
+    this.loginService.logout();
   }
 
 }

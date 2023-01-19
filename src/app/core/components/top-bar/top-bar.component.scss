@@ -1,0 +1,76 @@
+$bar-height: 57px;
+
+:host {
+  height: $bar-height;
+  min-height: $bar-height;
+}
+
+div.bar-wrapper {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  min-height: 50px;
+  background: #EBEBEB;
+
+  & > button.menu-button {
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    width: 40px;
+
+    & > span {
+      float: right;
+      line-height: 36px;
+      font-size: 36px;
+      color: rgba(0,0,0,0.16);
+    }
+  }
+
+  & > .logo {
+    height: 32px;
+    margin-left: 5px;
+
+    & > img {
+      height: 32px;
+    }
+  }
+
+  div.status-area {
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: calc($bar-height - 8px);
+    padding-top: 8px;
+    font-size: 12px;
+    margin-right: 12px;
+    color: #000000;
+    font-weight: 500;
+    opacity: 90%;
+
+    div.status-message {
+
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+
+      & > img {
+        margin-right: 5px;
+        height: 14px;
+      }
+    }
+
+    span.spacer {
+      margin: 0 12px;
+      color: rgba(0,0,0,0.20);
+    }
+
+  }
+}

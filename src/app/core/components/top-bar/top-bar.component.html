@@ -1,1 +1,28 @@
-<p>top-bar works!</p>
+<div class="bar-wrapper">
+  <button class="menu-button" (click)="showMenu($event)">
+    <span class="material-symbols-outlined">apps</span>
+  </button>
+
+  <a href="https://www.gaggle.net" class="logo" target="_blank" tabindex="-1">
+    <img class="logo" alt="Gaggle Logo" src="../../../../assets/logo--Gaggle.svg" />
+  </a>
+
+  <div style="flex: 1"></div>
+
+  <div class="status-area">
+    <div class="status-message">
+      <img alt="error icon" src="assets/icon--alert.svg" />
+      <span>Save unsuccessful.</span>
+    </div>
+
+    <span class="spacer">|</span>
+
+    <div class="status-message">
+      <img alt="loading indicator" src="assets/loading.gif" />
+      <span>Retrying...</span>
+    </div>
+
+  </div>
+</div>
+
+<app-application-menu></app-application-menu>
